@@ -9,6 +9,7 @@ class Vertex {
         this.point = new Point(point.x, point.y);
         this.name = name; //string
         this.neighbours = neighbours; //number[]
+        
     }
 
     print() {

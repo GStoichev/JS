@@ -8,7 +8,7 @@
             "type": "node",
             "request": "launch",
             "name": "Launch Program",
-            "program": "${workspaceFolder}\\Dijkstra/Untitled-1.js"
+            "program": "${workspaceFolder}\\Homework_1\\Task_1\\Dijkstra.js"
         }
     ]
 }

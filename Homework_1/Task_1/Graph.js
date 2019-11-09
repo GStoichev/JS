@@ -14,6 +14,7 @@ class Graph{
         mapLoader.readData(file);
 
         let JSONvertices = mapLoader.graphData.Graph.Vertices; 
+
         for(let JSONVertexData of JSONvertices) {
             let JSONVertex = JSONVertexData.Vertex;
             let id = JSONVertex.id;
@@ -69,7 +70,7 @@ class Graph{
         let prev = new Map();
         let queue = [];
 
-        let startingVertex = this.verticesMap.get(start); // if exists
+        let startingVertex = this.verticesMap.get(start);
         if(!startingVertex){
             return;
         }
@@ -85,6 +86,12 @@ class Graph{
 
         while(queue.length != 0) {
             let u = this.findVertexWithMinDest(queue, dist);
+            //it should be happaning only if we don't have path to from point A to point B
+            if(u == Number.MAX_SAFE_INTEGER)
+            {
+                console.log(`No found path from : ${start} to ${destination}`);
+                return [];
+            }
             if(u == destination)
             {
                 let path = this.extractFinalPath(start, destination , prev);
